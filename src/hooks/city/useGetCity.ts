@@ -6,5 +6,7 @@ function getData(): Promise<AxiosResponse<{ name: string; id: number }[]>> {
 }
 
 export function useGetCity() {
-    return useQuery({ queryKey: ['get-cities'], queryFn: getData })
+    return useQuery({
+        queryKey: ['get-cities'], queryFn: getData, staleTime: Infinity
+    })
 }

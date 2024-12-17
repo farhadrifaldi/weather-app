@@ -22,9 +22,8 @@ function getQueryClient(message: MessageInstance): QueryClient {
             },
         },
         queryCache: new QueryCache({
-            onError: (): void => {
-                // const errMessage = parseGraphQLErrorMsg(error);
-                message.error("test");
+            onError: (error): void => {
+                message.error(error.message);
             },
         }),
     });
