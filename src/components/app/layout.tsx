@@ -37,7 +37,7 @@ function BaseLayout({ children }: props): ReactElement {
 
     return <Layout style={{ height: '100vh' }}>
         <Header style={{ display: 'flex', alignItems: 'center', backgroundColor: 'white', borderBottom: 'solid 1px #ebebeb' }}>
-            <Flex style={{ width: 768 }} justify="space-between" align='center' >
+            <Flex style={{ width: 768, margin: 'auto' }} justify="space-between" align='center' >
                 <Image src={Logo} alt='Logo' height={60} />
                 <UserButton />
             </Flex>
