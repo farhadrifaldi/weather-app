@@ -59,7 +59,7 @@ COPY . .
 # # base64 is built-in linux command (part of GNU coreutils).
 # RUN echo "$ENV_BASE64" | base64 -d > /app/.env
 
-# COPY  .env.example .env
+COPY  .env.example .env
 
 # If you run docker outside pipeline that didn't send env variables (for example
 # from locally build docker images), then simply create or copy .env file from
