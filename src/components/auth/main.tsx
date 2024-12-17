@@ -7,6 +7,7 @@ import { signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
 export const FormLabel = {
+    [FormNames.name]: 'Name',
     [FormNames.email]: 'Email',
     [FormNames.password]: 'Password'
 }
@@ -55,15 +56,16 @@ export function Main() {
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ email: values.email, password: values.password }),
+            body: JSON.stringify({ email: values.email, password: values.password, name: values.name }),
         });
 
         const data = await res.json();
 
         if (res.ok) {
             notification.success({
-                message: 'Registration successful',
+                message: 'Registration successful, now you can login with your account',
             })
+            setIsLogin(true);
         } else {
             notification.error({ message: data.error })
         }
@@ -78,9 +80,12 @@ export function Main() {
 
 
     return (
-        <Flex justify="center" align="center" style={{ height: "100vh", margin: "0 auto" }}>
+        <Flex justify="center" align="center" style={{ margin: "0 auto" }}>
             <Form onFinish={onFinish} layout="vertical" style={{ width: 700, }}>
                 <Typography.Title level={2}>{title}</Typography.Title>
+                {!isLogin && <Form.Item name={FormNames.name} label={FormLabel[FormNames.name]}>
+                    <Input />
+                </Form.Item>}
                 <Form.Item name={FormNames.email} label={FormLabel[FormNames.email]}>
                     <Input />
                 </Form.Item>

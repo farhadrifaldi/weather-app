@@ -5,7 +5,7 @@ import { FormTypes } from '@/types/authFormType';
 const prisma = new PrismaClient();
 
 export async function POST(req: Request) {
-    const { email, password } = (await req.json()) as FormTypes;
+    const { email, password, name } = (await req.json()) as FormTypes;
 
     // Validate input
     if (!email || !password) {
@@ -27,6 +27,7 @@ export async function POST(req: Request) {
     // Create the user
     const user = await prisma.user.create({
         data: {
+            name,
             email,
             password: hashedPassword, // Store the hashed password
         },
