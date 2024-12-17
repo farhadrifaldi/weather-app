@@ -42,6 +42,19 @@ docker-compose up
 npm install
 ```
 
+- if you get any error like this
+
+```bash
+npm error code ERESOLVE
+npm error ERESOLVE unable to resolve dependency tree
+```
+
+use this command instead
+
+```bash
+npm install --force
+```
+
 - after that you have to run prisma command to generate, migrate the migration & run seeder script to add the user of this project
 
 ```bash
@@ -65,17 +78,13 @@ npm run build
 npm run start
 ```
 
-<!-- ## Learn More
+#### Predefined account
 
-To learn more about Next.js, take a look at the following resources:
+When you follow the steps above, you should notice, in the step it have command `node ./scripts/seed.js` that script is to store predefined account to database, you can check the predefined account in `./scripts/seed.mjs or you can see it below
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+email: admin@admin.com
+password: password
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details. -->
+Or you can create account when the app is running in `/login` page
