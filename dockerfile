@@ -71,6 +71,11 @@ COPY  .env.example .env
 # disable nextjs telemetry on build.
 ENV NEXT_TELEMETRY_DISABLED 1
 
+# Copy prisma schema
+COPY ./prisma/ /app/prisma
+# Then generate prisma ORM
+RUN npx prisma generate
+
 # Finally, build nextjs app
 # RUN npm run build
 RUN yarn build

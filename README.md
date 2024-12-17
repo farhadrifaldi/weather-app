@@ -42,9 +42,11 @@ docker-compose up
 npm install
 ```
 
-- after that you have to run prisma command to migrate the migration & run seeder script to add the user of this project
+- after that you have to run prisma command to generate, migrate the migration & run seeder script to add the user of this project
 
 ```bash
+npx prisma generate
+then
 npx prisma migrate dev
 then
 node ./scripts/seed.mjs
