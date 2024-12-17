@@ -1,4 +1,4 @@
-import { Main } from "@/modules/auth/main";
+import { Main } from "@/components/auth/main";
 
 export default function Page() {
   const LoginComponent = Main

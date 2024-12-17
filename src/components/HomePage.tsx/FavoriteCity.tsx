@@ -2,7 +2,7 @@
 
 import { ReactElement } from "react";
 import { CardWeather } from "./CardWeather";
-import { weather } from "@/modules/weather/type";
+import { weather } from "@/types/weather";
 import { useCurrentWeather } from "@/hooks/weathers/useCurrentWeather";
 
 type props = {

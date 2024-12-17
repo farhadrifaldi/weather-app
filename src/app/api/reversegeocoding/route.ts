@@ -1,5 +1,5 @@
 import axios, { AxiosError } from "axios";
-import { ReverseGeocodingResponse } from "@/modules/location/types";
+import { ReverseGeocodingResponse } from "@/types/location";
 import { NextResponse } from "next/server";
 
 const GEOCODE_MAPS_API_BASE_URL = "https://geocode.maps.co/reverse"

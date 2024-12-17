@@ -1,4 +1,4 @@
-import { WeatherForecastResponse } from "@/modules/weather/type"
+import { WeatherForecastResponse } from "@/types/weather"
 import { useQuery } from "@tanstack/react-query"
 import axios, { AxiosResponse } from "axios"
 

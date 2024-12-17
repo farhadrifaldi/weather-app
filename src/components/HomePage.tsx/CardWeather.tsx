@@ -3,7 +3,7 @@
 import { useAddCity } from "@/hooks/city/useAddCity";
 import { useDeleteCity } from "@/hooks/city/useDeleteCity";
 import { useGetCity } from "@/hooks/city/useGetCity";
-import { Location, weather } from "@/modules/weather/type";
+import { Location, weather } from "@/types/weather";
 import { Button, Card, Flex, Tooltip, Typography } from "antd";
 import dayjs from "dayjs";
 import { useSession } from "next-auth/react";

@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { PrismaClient } from '@prisma/client';
 import { hashString } from '@/utils/encrypt';
-import { FormTypes } from '@/modules/auth/types/form';
+import { FormTypes } from '@/types/authFormType';
 const prisma = new PrismaClient();
 
 export async function POST(req: Request) {

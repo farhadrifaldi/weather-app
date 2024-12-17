@@ -1,7 +1,7 @@
 'use client'
 
 import { App, Button, Flex, Form, Input, Typography } from "antd";
-import { FormNames, FormTypes } from "./types/form";
+import { FormNames, FormTypes } from "../../types/authFormType";
 import { useState } from "react";
 import { signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
@@ -71,7 +71,6 @@ export function Main() {
 
     const { data: session } = useSession()
 
-    console.log(session)
     if (session) {
         return <p>You are logged, welcome!</p>
     }

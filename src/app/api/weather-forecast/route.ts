@@ -1,4 +1,4 @@
-import { WeatherForecastResponse } from "@/modules/weather/type";
+import { WeatherForecastResponse } from "@/types/weather";
 import axios from "axios";
 import { NextResponse } from "next/server";
 

@@ -1,4 +1,4 @@
-import { ReverseGeocodingResponse } from "@/modules/location/types";
+import { ReverseGeocodingResponse } from "@/types/location";
 import { useQuery } from "@tanstack/react-query";
 import axios, { AxiosResponse } from "axios";
 import { useState, useEffect } from "react";
